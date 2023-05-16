@@ -1,0 +1,15 @@
+dash
+pandas
+plotly
+numpy
+os
+scikit-learn
+tqdm
+matplotlib
+seaborn
+holidays
+statsmodels
+prophet
+math
+argparse
+random
