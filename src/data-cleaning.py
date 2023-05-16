@@ -41,7 +41,7 @@ class DataProcessor:
         # ##### 2017 to 2019 and 2021 to 2022 = 365*5 + 366 for 2020 --> 2191 
         # ##### 4 data points each day for 6 hour intervals so 2191*4 --> 8764
         # ## Saving Cosolidated demand data as CSV
-        demand_6h.to_csv(self.data_path+'/demanddata_2017-2022_6H.csv',index=False, float_format='%.2f')
+        demand_6h.to_csv(self.data_path+'/demanddata_2017_2022_6H.csv',index=False, float_format='%.2f')
         return demand_6h
 
     # ## Creating Temp Data
@@ -51,7 +51,7 @@ class DataProcessor:
         #Getting data for 2017-2022
         df_temps = df_temps[df_temps['observation_dtg_utc'] < '2023-01-01 00:00:00']
 
-        df_temps.to_csv(self.data_path+'/temperaturedata-2017-2022-6H.csv',index=False, float_format='%.2f')
+        df_temps.to_csv(self.data_path+'/temperaturedata_2017_2022_6H.csv',index=False, float_format='%.2f')
         return df_temps
 
     # ## Combining both data sets
@@ -64,7 +64,7 @@ class DataProcessor:
         final_clean_df= final_clean_df.rename(columns={'timestamp':'observation_dtg_utc'})
 
         # ## Saving Cleaned dataframe with only demand, temp and date information as CSV
-        final_clean_df.to_csv(self.data_path+'/cleaned-temp-dmnd-2017-2022.csv', index =False, float_format='%.2f')
+        final_clean_df.to_csv(self.data_path+'/cleaned_temp_dmnd_2017_2022.csv', index =False, float_format='%.2f')
 
 
 # Create an ArgumentParser object
